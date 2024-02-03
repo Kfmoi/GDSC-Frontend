@@ -26,7 +26,7 @@ const TextInputDisplay = () => {
     // finally, the return statement with the actual display
     return (
         <div className="input-card">
-            <input className="input-text" type = "text" value={text} /> {/* should we make this readOnly? */}
+            <input className="input-text" type = "text" value={text} readOnly /> {/* should we make this readOnly? */}
             <div className="option-buttons">
                 <button onClick={handleBackspace}>Backspace</button>
                 <button onClick={handleClear}>Clear</button>
