@@ -1,0 +1,12 @@
+.output{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 20px;
+}
+
+
+button.copy{
+    background-color: #4CAF50;
+    color: white;
+}

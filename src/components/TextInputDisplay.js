@@ -1,5 +1,6 @@
 // import useState, a React Hook, for components to manage the states
 import React, { useState } from "react";
+import './TextInputDisplay.css';
 
 import ScrollPicker from "./ScrollPicker";
 
@@ -31,12 +32,19 @@ const TextInputDisplay = () => {
 
     // finally, the return statement with the actual display
     return (
-        <div>
-            <input type = "text" value={text} /> {/* should we make this readOnly? */}
-            <button onClick={handleBackspace}>Backspace</button>
-            <button onClick={handleClear}>Clear</button>
-            <button onClick={handleCopy}>Copy to clipboard</button>
+        <div className="input-card">
+            <div className="column-display">
+            <input className="input-text" type = "text" value={text} readOnly placeholder='Input Text'/> {/* should we make this readOnly? */}
+            <button className="copy" onClick={handleCopy}>Copy to clipboard</button>
+            </div>
+            
+            <div className="option-buttons">
+                <button className="delete" onClick={handleBackspace}>Backspace</button>
+                <button className="delete" onClick={handleClear}>Clear</button>
+            </div>
+
             <ScrollPicker onSelect={addLetter}/>
+
         </div>
     );
 
