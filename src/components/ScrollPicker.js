@@ -20,6 +20,18 @@ const ScrollPicker = ({ onSelect }) => {
         else setLetterIdx(0);
     };
 
+    const handleDoubleScrollUp = () => {
+        if (letterIdx > 1) setLetterIdx(letterIdx-2);
+        else if (letterIdx == 1) setLetterIdx(alphabet.length-2)
+        else setLetterIdx(alphabet.length-1);
+    };
+
+    const handleDoubleScrollDown = () => {
+        if (letterIdx < alphabet.length-2) setLetterIdx(letterIdx+2);
+        else if (letterIdx == 24) setLetterIdx(0)
+        else setLetterIdx(1);
+    };
+
     const handleSelect = (letter) => {
         const currLetter = alphabet[letterIdx];
         onSelect(currLetter);
@@ -30,6 +42,8 @@ const ScrollPicker = ({ onSelect }) => {
             <div>{alphabet[letterIdx]}</div>
             <button onClick = {handleScrollUp}>↑</button>
             <button onClick = {handleScrollDown}>↓</button>
+            <button onClick = {handleDoubleScrollUp}>↑↑</button>
+            <button onClick = {handleDoubleScrollDown}>↓↓</button>
             <button onClick = {handleSelect}>+</button>
         </div>
     )
