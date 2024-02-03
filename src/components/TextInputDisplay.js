@@ -22,4 +22,16 @@ const TextInputDisplay = () => {
 
     }
 
+    // finally, the return statement with the actual display
+    return (
+        <div>
+            <input type = "text" value={text} /> {/* should we make this readOnly? */}
+            <button onClick={handleBackspace}>Backspace</button>
+            <button onClick={handleClear}>Clear</button>
+            <button onClick={handleCopy}>Copy to clipboard</button>
+        </div>
+    );
+
 };
+
+export default TextInputDisplay;
