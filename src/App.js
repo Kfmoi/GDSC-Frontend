@@ -4,11 +4,15 @@ import React from 'react';
 // import components
 import TextInputDisplay from './components/TextInputDisplay';
 
-import './App.css';
+// import './App.css';
 
 function App() {
   return (
-    
+    <div>
+      <h1>[INSERT TITLE HERE]</h1> 
+      <TextInputDisplay />
+      {/* Other components will go here as well */}
+    </div>
   );
 }
 
