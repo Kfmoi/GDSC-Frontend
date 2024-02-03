@@ -22,7 +22,7 @@ const TextInputDisplay = () => {
 
     // copying from display to clipboard
     const handleCopy = () => {
-
+        navigator.clipboard.writeText(text);
     };
 
     const addLetter = (letter) => {
