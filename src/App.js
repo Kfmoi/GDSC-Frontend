@@ -4,11 +4,11 @@ import React from 'react';
 // import components
 import FrontPage from './pages/FrontPage';
 
-// import './App.css';
+import './App.css';
 
 function App() {
   return (
-    <div className='App'>
+    <div className='app'>
       <FrontPage />
     </div>
   );
