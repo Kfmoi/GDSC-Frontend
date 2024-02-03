@@ -11,12 +11,12 @@ const ScrollPicker = ({ onSelect }) => {
 
     // make functions for scrolling up, down, and selecting
     const handleScrollUp = () => {
-        if (letter > 0) setLetterIdx(letterIdx-1);
+        if (letterIdx > 0) setLetterIdx(letterIdx-1);
         else setLetterIdx(alphabet.length-1);
     };
 
     const handleScrollDown = () => {
-        if (letter < alphabet.length) setLetterIdx(letterIdx+1);
+        if (letterIdx < alphabet.length-1) setLetterIdx(letterIdx+1);
         else setLetterIdx(0);
     };
 

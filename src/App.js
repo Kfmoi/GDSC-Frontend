@@ -3,6 +3,7 @@ import React from 'react';
 
 // import components
 import TextInputDisplay from './components/TextInputDisplay';
+import ScrollPicker from './components/ScrollPicker';
 
 // import './App.css';
 
@@ -11,6 +12,7 @@ function App() {
     <div>
       <h1>[INSERT TITLE HERE]</h1> 
       <TextInputDisplay />
+      <ScrollPicker />
       {/* Other components will go here as well */}
     </div>
   );
