@@ -7,8 +7,7 @@
 }
 
 .title{
-    font-size: 3rem;
-    margin-bottom: 1rem;
+    font-size: 2.5rem;
 }
 
 .function{
@@ -20,7 +19,7 @@
       255,
       255,
       0.8
-    ); /* Adjust the alpha value as needed */
+    ); 
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
