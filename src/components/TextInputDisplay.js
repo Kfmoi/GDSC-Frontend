@@ -22,7 +22,12 @@ const TextInputDisplay = () => {
     // copying from display to clipboard
     const handleCopy = () => {
 
-    }
+    };
+
+    const addLetter = (letter) => {
+        setText(text + letter);
+    };
+
 
     // finally, the return statement with the actual display
     return (
@@ -31,7 +36,7 @@ const TextInputDisplay = () => {
             <button onClick={handleBackspace}>Backspace</button>
             <button onClick={handleClear}>Clear</button>
             <button onClick={handleCopy}>Copy to clipboard</button>
-            <ScrollPicker />
+            <ScrollPicker onSelect={addLetter}/>
         </div>
     );
 
