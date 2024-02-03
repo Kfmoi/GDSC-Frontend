@@ -1,6 +1,8 @@
 // import useState, a React Hook, for components to manage the states
 import React, { useState } from "react";
 
+import ScrollPicker from "./ScrollPicker";
+
 // main function 
 const TextInputDisplay = () => {
 
@@ -29,6 +31,7 @@ const TextInputDisplay = () => {
             <button onClick={handleBackspace}>Backspace</button>
             <button onClick={handleClear}>Clear</button>
             <button onClick={handleCopy}>Copy to clipboard</button>
+            <ScrollPicker />
         </div>
     );
 

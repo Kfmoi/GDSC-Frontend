@@ -12,7 +12,7 @@ function App() {
     <div>
       <h1>[INSERT TITLE HERE]</h1> 
       <TextInputDisplay />
-      <ScrollPicker />
+      
       {/* Other components will go here as well */}
     </div>
   );
