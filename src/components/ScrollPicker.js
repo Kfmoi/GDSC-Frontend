@@ -27,12 +27,10 @@ const ScrollPicker = ({ onSelect }) => {
 
     return (
         <div>
-            {/* maps each letter in alphabet list to letter selected */}
-           { alphabet.map((letter) => (
-                <button key = {letter} onClick = {() => handleSelect(letter)}>
-                    {letter}
-                </button>
-           ))} 
+            <div>{alphabet[letterIdx]}</div>
+            <button onClick = {handleScrollUp}>↑</button>
+            <button onClick = {handleScrollDown}>↓</button>
+            <button onClick = {handleSelect}>+</button>
         </div>
     )
 
