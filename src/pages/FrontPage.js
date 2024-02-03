@@ -1,5 +1,6 @@
-import TextInputDisplay from "../components/TextInputDisplay";
-import TextOutputDisplay from "../components/TextOutputDisplay.js/TextOutputDisplay";
+
+import TextOutputDisplay from "../components/textOutputDisplay/TextOutputDisplay";
+import TextInputDisplay from "../components/textInputDisplay/TextInputDisplay";
 import './FrontPage.css';
 const FrontPage = () => {
     return (

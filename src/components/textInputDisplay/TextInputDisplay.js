@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import './TextInputDisplay.css';
 
-import ScrollPicker from "./ScrollPicker";
+import ScrollPicker from "../scrollPicker/ScrollPicker";
 
 // main function 
 const TextInputDisplay = () => {
