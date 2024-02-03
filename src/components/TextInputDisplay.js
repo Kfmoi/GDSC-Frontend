@@ -1,5 +1,6 @@
 // import useState, a React Hook, for components to manage the states
 import React, { useState } from "react";
+import './TextInputDisplay.css';
 
 // main function 
 const TextInputDisplay = () => {
@@ -24,11 +25,13 @@ const TextInputDisplay = () => {
 
     // finally, the return statement with the actual display
     return (
-        <div>
-            <input type = "text" value={text} /> {/* should we make this readOnly? */}
-            <button onClick={handleBackspace}>Backspace</button>
-            <button onClick={handleClear}>Clear</button>
-            <button onClick={handleCopy}>Copy to clipboard</button>
+        <div className="input-card">
+            <input className="input-text" type = "text" value={text} /> {/* should we make this readOnly? */}
+            <div className="option-buttons">
+                <button onClick={handleBackspace}>Backspace</button>
+                <button onClick={handleClear}>Clear</button>
+                <button onClick={handleCopy}>Copy to clipboard</button>
+            </div>
         </div>
     );
 
