@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 import './TextInputDisplay.css';
 
+import ScrollPicker from "./ScrollPicker";
+
 // main function 
 const TextInputDisplay = () => {
 
@@ -21,7 +23,12 @@ const TextInputDisplay = () => {
     // copying from display to clipboard
     const handleCopy = () => {
 
-    }
+    };
+
+    const addLetter = (letter) => {
+        setText(text + letter);
+    };
+
 
     // finally, the return statement with the actual display
     return (
@@ -35,6 +42,9 @@ const TextInputDisplay = () => {
                 <button className="delete" onClick={handleBackspace}>Backspace</button>
                 <button className="delete" onClick={handleClear}>Clear</button>
             </div>
+
+            <ScrollPicker onSelect={addLetter}/>
+
         </div>
     );
 
