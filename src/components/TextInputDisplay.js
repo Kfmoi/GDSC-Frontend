@@ -11,4 +11,15 @@ const TextInputDisplay = () => {
     const handleBackspace = () => {
         setText(text.slice(0, text.length-1));
     };
-}
+
+    // clearing display
+    const handleClear = () => {
+        setText('');
+    };
+
+    // copying from display to clipboard
+    const handleCopy = () => {
+
+    }
+
+};
