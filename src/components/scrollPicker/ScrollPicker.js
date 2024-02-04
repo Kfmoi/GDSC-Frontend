@@ -36,16 +36,16 @@ const ScrollPicker = ({ onSelect }) => {
 
   return (
     <div className="container">
-      <div className="currentLetter">{alphabet[letterIdx]}</div>
       <div className="buttons">
       <div className="left-button">
+      <button className="button" onClick={handleDoubleScrollUp}>
+          ↑↑
+        </button>
         <button className="button" onClick={handleScrollUp}>
           ↑
         </button>
-        <button className="button" onClick={handleDoubleScrollUp}>
-          ↑↑
-        </button>
       </div>
+      <div className="currentLetter">{alphabet[letterIdx]}</div>
       <div className="right-button">
         <button className="button" onClick={handleScrollDown}>
           ↓
