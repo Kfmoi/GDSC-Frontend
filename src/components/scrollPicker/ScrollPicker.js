@@ -4,35 +4,44 @@ import "./ScrollPicker.css";
 
 // main function, variable to be used as function for getting letter
 const ScrollPicker = ({ onSelect }) => {
-  // variable for storing alphabet
+  // variable for storing charset
   const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  const symbols = ".,?!'\":;()@$%#^&+-*/[]{}<>\\";
+  const numbers = "0123456789";
+  const CHARACTER_SETS = [alphabet, symbols, numbers];
+  const charsetButtonSymbols = ["ABC", ".?!", "123"];
 
   // state hook for the state of current letter in scroll picker
-  const [letterIdx, setLetterIdx] = useState(0);
+  const [charIdx, setCharIdx] = useState(0);
+
+  // state hook for the current character set being selected through
+  const [charset, setCharset] = useState(0);
 
   // make functions for scrolling up, down, and selecting
   const handleScrollUp = () => {
-    // if (letterIdx > 0) setLetterIdx(letterIdx - 1);
-    // else setLetterIdx(alphabet.length - 1);
-    setLetterIdx((letterIdx + alphabet.length - 1) % alphabet.length);
+    setCharIdx((charIdx + CHARACTER_SETS[charset].length - 1) % CHARACTER_SETS[charset].length);
   };
 
   const handleScrollDown = () => {
-    setLetterIdx((letterIdx + alphabet.length + 1) % alphabet.length);
+    setCharIdx((charIdx + CHARACTER_SETS[charset].length + 1) % CHARACTER_SETS[charset].length);
   };
 
   const handleDoubleScrollUp = () => {
-    setLetterIdx((letterIdx + alphabet.length - 2) % alphabet.length);
+    setCharIdx((charIdx + CHARACTER_SETS[charset].length - 2) % CHARACTER_SETS[charset].length);
   };
 
   const handleDoubleScrollDown = () => {
-    setLetterIdx((letterIdx + alphabet.length + 2) % alphabet.length);
+    setCharIdx((charIdx + CHARACTER_SETS[charset].length + 2) % CHARACTER_SETS[charset].length);
   };
 
-  const handleSelect = (letter) => {
-    const currLetter = alphabet[letterIdx].toLowerCase();
-    onSelect(currLetter);
+  const handleSelect = () => {
+    onSelect(CHARACTER_SETS[charset][charIdx].toLowerCase());
   };
+
+  const handleCharMode = () => {
+    setCharIdx(0);
+    setCharset((charset + CHARACTER_SETS.length + 1) % CHARACTER_SETS.length);
+  }
 
   return (
     <div className="container">
@@ -45,7 +54,7 @@ const ScrollPicker = ({ onSelect }) => {
           ↑
         </button>
       </div>
-      <div className="currentLetter">{alphabet[letterIdx]}</div>
+      <div className="currentLetter">{CHARACTER_SETS[charset][charIdx]}</div>
       <div className="right-button">
         <button className="button" onClick={handleScrollDown}>
           ↓
