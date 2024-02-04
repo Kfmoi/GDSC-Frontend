@@ -25,13 +25,13 @@ const TextOutputDisplay = ({ onSave, text }) => {
           <div className="output-buttons">
             <button
             // Calls the handleSave function from the FrontPage component
-              onClick={() => onSave(selectedOption)}
+              onClick={() => onSave(selectedOption.toLowerCase())}
               className="output-button"
             >
-              Save
+              lowercase
             </button>
-            <button onClick={handleCopy} className="output-button">
-              Copy
+            <button onClick={() => onSave(selectedOption.toUpperCase())} className="output-button">
+              UPPERCASE
             </button>
             <button className="output-button">C</button>
           </div>
