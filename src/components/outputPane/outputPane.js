@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 
 import './OutputPane.css';
 
@@ -27,15 +28,15 @@ const OutputPane = () => {
 
     return (
         <div className="outputBox">
-            <button className="clear">Clear all text</button>
-            <button className="copy">Copy to clipboard</button>
+            <button className="clear" onClick={handleClear}>Clear all text</button>
+            <button className="copy" onClick={handleCopy}>Copy to clipboard</button>
             <textarea className="outputTextBox" type = "text" value={text} 
                 readOnly placeholder='Output Text' rows={12} wrap='soft' cols={35}/>
             <div className='backspace'>
-                <button className="back">Backspace</button>
-                <button className="super-back">Super Backspace</button>
+                <button className="back" onClick={handleBackspace}>Backspace</button>
+                <button className="super-back" onClick={handleSuperBackspace}>Super Backspace</button>
             </div>
-            <button className="copy">Space</button>
+            <button className="copy" onClick={handleSpace}>Space</button>
         </div>
     );
 };
