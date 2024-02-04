@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import './OutputPane.css';
 
-const OutputPane = ({ outputText, onClear }) => {
+const OutputPane = ({ outputText, onClear, onBackspace, onSuperBackspace, onSpace}) => {
     const [text, setText] = useState(outputText);
-
+ 
     // useEffect function is called whenever the outputText changes
     useEffect(() => {
         setText(outputText);
@@ -19,6 +19,7 @@ const OutputPane = ({ outputText, onClear }) => {
     };
 
     const handleBackspace = () => {
+        onBackspace();
         if (text.length === 0) {
             return;
         }
@@ -26,6 +27,7 @@ const OutputPane = ({ outputText, onClear }) => {
     };
 
     const handleSuperBackspace = () => {
+        onSuperBackspace();
         if (text.length === 0) {
             return;
         }
@@ -43,6 +45,7 @@ const OutputPane = ({ outputText, onClear }) => {
     };
 
     const handleSpace = () => {
+        onSpace();
         setText(text + ' ');
     }
 
