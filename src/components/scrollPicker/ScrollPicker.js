@@ -7,7 +7,7 @@ const ScrollPicker = ({ onSelect }) => {
   // variable for storing charset
   const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   const symbols = ".,?!'\":;()@$%#^&+-*/[]{}<>\\";
-  const numbers = "0123456789";
+  const numbers = "0987654321";
   const CHARACTER_SETS = [alphabet, symbols, numbers];
   const charsetButtonSymbols = ["ABC", ".?!", "123"];
 
@@ -66,6 +66,9 @@ const ScrollPicker = ({ onSelect }) => {
       </div>
       <button className="selectButton" onClick={handleSelect}>
         +
+      </button>
+      <button className="charMode" onClick={handleCharMode}>
+        {charsetButtonSymbols[(charset + 1) % CHARACTER_SETS.length]}
       </button>
     </div>
   );
