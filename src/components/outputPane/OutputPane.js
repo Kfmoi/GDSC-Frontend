@@ -1,11 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import './OutputPane.css';
 
-const OutputPane = ({ outputText }) => {
-    const [text, setText] = useState('');
+const OutputPane = ({ outputText, onClear }) => {
+    const [text, setText] = useState(outputText);
+
+    // useEffect function is called whenever the outputText changes
+    useEffect(() => {
+        setText(outputText);
+    }, [outputText]);
 
     const handleClear = () => {
         setText('');
+        onClear(); // Calls the onClear function from the FrontPage component
     };
 
     const handleCopy = () => {

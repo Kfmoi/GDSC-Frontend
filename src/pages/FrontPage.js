@@ -16,6 +16,11 @@ const FrontPage = () => {
           }
       };
 
+    // Handles the clear button from the OutputPane component
+    const handleClear = () => {
+        setOutputText('');
+    };
+
     return (
             <div className="main-page">
                 <div className="grouper">
@@ -24,7 +29,7 @@ const FrontPage = () => {
                         <TextInputDisplay />
                     </div>
                     <div className="outputBox">
-                        <OutputPane outputText={outputText} />
+                        <OutputPane outputText={outputText} onClear={handleClear}/>
                     </div>
                 </div>
             </div>
