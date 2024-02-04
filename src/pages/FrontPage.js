@@ -11,6 +11,7 @@ const FrontPage = () => {
     const handleSave = (text) => {
         setOutputText((prevText) => prevText + text);
       };
+
     return (
             <div className="main-page">
                 <div className="grouper">
