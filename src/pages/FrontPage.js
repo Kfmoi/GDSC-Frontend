@@ -26,7 +26,7 @@ const FrontPage = () => {
                 <div className="grouper">
                     <div className="function">
                         <TextOutputDisplay onSave={handleSave} />
-                        <TextInputDisplay />
+                        <TextInputDisplay onSave={handleSave}/>
                     </div>
                     <div className="outputBox">
                         <OutputPane outputText={outputText} onClear={handleClear}/>

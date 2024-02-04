@@ -5,7 +5,18 @@ import './TextInputDisplay.css';
 import ScrollPicker from "../scrollPicker/ScrollPicker";
 
 // main function 
-const TextInputDisplay = () => {
+const TextInputDisplay = ( {onSave} ) => {
+
+    // same function as in the TextOutputDisplay component
+    // should move instead of copying
+    function toTitleCase(str) {
+        return str.replace(
+          /\w\S*/g,
+          function(txt) {
+            return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+          }
+        );
+      }
 
     // useState function returns array with current state value and function to update it
     const [text, setText] = useState('');
@@ -20,10 +31,6 @@ const TextInputDisplay = () => {
         setText('');
     };
 
-    // copying from display to clipboard
-    const handleCopy = () => {
-        navigator.clipboard.writeText(text);
-    };
 
     const addLetter = (letter) => {
         setText(text + letter);
@@ -37,9 +44,19 @@ const TextInputDisplay = () => {
             <input className="input-text" type = "text" value={text} readOnly placeholder='Input Text'/> {/* should we make this readOnly? */}
             </div>
             <div className='output-buttons'>
-            <button className='output-button'>A</button>
-            <button className='output-button' >B</button>
-            <button className='output-button' >C</button>
+            <div className="output-buttons">
+            <button
+            // Calls the handleSave function from the FrontPage component
+              onClick={() => onSave(text.toLowerCase())}
+              className="output-button"
+            >
+              lowercase
+            </button>
+            <button onClick={() => onSave(text.toUpperCase())} className="output-button">
+              UPPERCASE
+            </button>
+            <button onClick={() => onSave(toTitleCase(text))} className="output-button">TitleCase</button>
+          </div>
         </div>
             
             <div className="option-buttons">
