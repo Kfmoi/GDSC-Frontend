@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import './OutputPane.css';
 
-const OutputPane = () => {
+const OutputPane = ({outputText}) => {
 
     const [text, setText] = useState('Hi, how are you?');
     
@@ -39,7 +39,7 @@ const OutputPane = () => {
         <div className="outputBox">
             <button className="clear" onClick={handleClear}>Clear all text</button>
             <button className="copy" onClick={handleCopy}>Copy to clipboard</button>
-            <textarea className="outputTextBox" type = "text" value={text} 
+            <textarea className="outputTextBox" type = "text" value={outputText} 
                 readOnly placeholder='Output Text' rows={12} wrap='soft' cols={35}/>
             <div className='backspace'>
                 <button className="back" onClick={handleBackspace}>Backspace</button>
