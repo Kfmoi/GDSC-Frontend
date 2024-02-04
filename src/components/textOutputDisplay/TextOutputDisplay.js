@@ -1,5 +1,5 @@
 import "./TextOutputDisplay.css";
-const TextOutputDisplay = ({ onChange, text }) => {
+const TextOutputDisplay = ({ onSave, text }) => {
   const handleCopy = () => {
     navigator.clipboard.writeText(text);
   };
@@ -11,12 +11,12 @@ const TextOutputDisplay = ({ onChange, text }) => {
             className="input-text"
             type="text"
             value={text}
-            readOnly
             placeholder="Autocomplete Text"
+            readOnly
           />
           <div className="output-buttons">
-            <button className="output-button">A</button>
-            <button className="output-button">B</button>
+            <button onClick={() => onSave(text)} className="output-button">Save</button>
+            <button onClick={handleCopy} className="output-button">Copy</button>
             <button className="output-button">C</button>
           </div>
         </div>
