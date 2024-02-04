@@ -33,12 +33,12 @@ const TextOutputDisplay = ({ onSave, text }) => {
               onClick={() => onSave(selectedOption.toLowerCase())}
               className="output-button"
             >
-              lowercase
+              +abc
             </button>
             <button onClick={() => onSave(selectedOption.toUpperCase())} className="output-button">
-              UPPERCASE
+              +ABC
             </button>
-            <button onClick={() => onSave(toTitleCase(selectedOption))} className="output-button">TitleCase</button>
+            <button onClick={() => onSave(toTitleCase(selectedOption))} className="output-button">+Abc</button>
           </div>
         </div>
       </div>
