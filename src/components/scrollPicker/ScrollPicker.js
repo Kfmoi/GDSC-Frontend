@@ -12,25 +12,21 @@ const ScrollPicker = ({ onSelect }) => {
 
   // make functions for scrolling up, down, and selecting
   const handleScrollUp = () => {
-    if (letterIdx > 0) setLetterIdx(letterIdx - 1);
-    else setLetterIdx(alphabet.length - 1);
+    // if (letterIdx > 0) setLetterIdx(letterIdx - 1);
+    // else setLetterIdx(alphabet.length - 1);
+    setLetterIdx((letterIdx + alphabet.length - 1) % alphabet.length);
   };
 
   const handleScrollDown = () => {
-    if (letterIdx < alphabet.length - 1) setLetterIdx(letterIdx + 1);
-    else setLetterIdx(0);
+    setLetterIdx((letterIdx + alphabet.length + 1) % alphabet.length);
   };
 
   const handleDoubleScrollUp = () => {
-    if (letterIdx > 1) setLetterIdx(letterIdx - 2);
-    else if (letterIdx == 1) setLetterIdx(alphabet.length - 2);
-    else setLetterIdx(alphabet.length - 1);
+    setLetterIdx((letterIdx + alphabet.length - 2) % alphabet.length);
   };
 
   const handleDoubleScrollDown = () => {
-    if (letterIdx < alphabet.length - 2) setLetterIdx(letterIdx + 2);
-    else if (letterIdx == 24) setLetterIdx(0);
-    else setLetterIdx(1);
+    setLetterIdx((letterIdx + alphabet.length + 2) % alphabet.length);
   };
 
   const handleSelect = (letter) => {
