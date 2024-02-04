@@ -4,7 +4,7 @@ import './TextInputDisplay.css';
 
 import ScrollPicker from "../scrollPicker/ScrollPicker";
 
-// main function 
+// main function
 const TextInputDisplay = ( {onSave} ) => {
 
     // same function as in the TextOutputDisplay component
@@ -50,15 +50,15 @@ const TextInputDisplay = ( {onSave} ) => {
               onClick={() => onSave(text.toLowerCase())}
               className="output-button"
             >
-              lowercase
+              +abc
             </button>
             <button onClick={() => onSave(text.toUpperCase())} className="output-button">
-              UPPERCASE
+              +ABC
             </button>
-            <button onClick={() => onSave(toTitleCase(text))} className="output-button">TitleCase</button>
+            <button onClick={() => onSave(toTitleCase(text))} className="output-button">+Abc</button>
           </div>
         </div>
-            
+
             <div className="option-buttons">
                 <button className="delete" onClick={handleBackspace}>Backspace</button>
                 <button className="delete" onClick={handleClear}>Clear</button>
