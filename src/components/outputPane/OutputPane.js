@@ -1,14 +1,14 @@
 
 import './OutputPane.css';
 
-const OutputPane = () => {
+const OutputPane = ({ outputText }) => {
 
 
     return (
         <div className="outputBox">
             <button className="clear">Clear all text</button>
             <button className="copy">Copy to clipboard</button>
-            <textarea className="outputTextBox" type = "text" value="Output Text" 
+            <textarea className="outputTextBox" type = "text" value={outputText} 
                 readOnly placeholder='Output Text' rows={12} wrap='soft' cols={35}/>
             <div className='backspace'>
                 <button className="back">Backspace</button>
