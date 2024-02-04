@@ -1,7 +1,7 @@
 
 import TextOutputDisplay from "../components/textOutputDisplay/TextOutputDisplay";
 import TextInputDisplay from "../components/textInputDisplay/TextInputDisplay";
-import OutputPane from "../components/textInputDisplay/OutputPane";
+import OutputPane from "../components/outputPane/OutputPane";
 
 import './FrontPage.css';
 const FrontPage = () => {
