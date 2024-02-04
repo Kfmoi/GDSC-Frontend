@@ -11,7 +11,7 @@
   font-size: 16px;
 }
 
-.column-display{
+.row-display{
     display: flex;
     flex-direction: row;
 }
@@ -37,8 +37,10 @@ button:hover {
 }
 
 button.delete {
-  background-color: #f44336;
+  background-color: #db1607;
   color: white;
+  font-size: 1.5rem;
+  
 }
 
 button.delete:hover {
