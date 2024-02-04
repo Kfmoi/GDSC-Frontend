@@ -6,8 +6,10 @@ import React, { useState } from 'react';
 
 import './FrontPage.css';
 const FrontPage = () => {
+
     const [outputText, setOutputText] = useState('');
 
+    // Handles the save button from the TextOutputDisplay component
     const handleSave = (text) => {
         if (text !== undefined && text !== null) {
             setOutputText((prevText) => prevText + text);

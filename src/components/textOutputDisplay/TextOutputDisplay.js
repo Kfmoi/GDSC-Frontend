@@ -1,9 +1,12 @@
 import "./TextOutputDisplay.css";
 import React, { useState } from "react";
 const TextOutputDisplay = ({ onSave, text }) => {
+
   const handleCopy = () => {
     navigator.clipboard.writeText(text);
   };
+
+  // useState function returns array with current state value of the dropdown and function to update it
   const [selectedOption, setSelectedOption] = useState("");
   return (
     <div>
@@ -12,6 +15,7 @@ const TextOutputDisplay = ({ onSave, text }) => {
           <select
             className="input-text"
             value={selectedOption}
+            // Changes the useState to the value of the dropdown
             onChange={(e) => setSelectedOption(e.target.value)}
           >
             <option value="Option 1">Option 1</option>
@@ -20,6 +24,7 @@ const TextOutputDisplay = ({ onSave, text }) => {
           </select>
           <div className="output-buttons">
             <button
+            // Calls the handleSave function from the FrontPage component
               onClick={() => onSave(selectedOption)}
               className="output-button"
             >
