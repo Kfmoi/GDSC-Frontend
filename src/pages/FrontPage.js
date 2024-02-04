@@ -9,7 +9,9 @@ const FrontPage = () => {
     const [outputText, setOutputText] = useState('');
 
     const handleSave = (text) => {
-        setOutputText((prevText) => prevText + text);
+        if (text !== undefined && text !== null) {
+            setOutputText((prevText) => prevText + text);
+          }
       };
 
     return (
