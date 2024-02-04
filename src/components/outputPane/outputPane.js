@@ -4,7 +4,7 @@ import './OutputPane.css';
 
 const OutputPane = () => {
 
-    const [text, setText] = useState('');
+    const [text, setText] = useState('Hi, how are you?');
     
     const handleClear = () => {
         setText('');
@@ -20,6 +20,15 @@ const OutputPane = () => {
 
     const handleSuperBackspace = () => {
         // remove the last word
+        if (text.length === 0) return;
+
+        for (let i = text.length - 1; i >= 0; i--) {
+            if (!((text[i] >= 'a' && text[i] <= 'z') || (text[i] >= 'A' && text[i] <= 'Z') || (text[i] >= '0' && text[i] <= '9'))) {
+                setText(text.slice(0, i));
+                return;
+            }
+        }
+        setText("");
     };
 
     const handleSpace = () => {
