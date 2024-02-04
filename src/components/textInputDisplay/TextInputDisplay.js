@@ -33,10 +33,14 @@ const TextInputDisplay = () => {
     // finally, the return statement with the actual display
     return (
         <div className="input-card">
-            <div className="column-display">
+            <div className="row-display">
             <input className="input-text" type = "text" value={text} readOnly placeholder='Input Text'/> {/* should we make this readOnly? */}
-            <button className="copy" onClick={handleCopy}>Copy to clipboard</button>
             </div>
+            <div className='output-buttons'>
+            <button className='output-button'>A</button>
+            <button className='output-button' >B</button>
+            <button className='output-button' >C</button>
+        </div>
             
             <div className="option-buttons">
                 <button className="delete" onClick={handleBackspace}>Backspace</button>
