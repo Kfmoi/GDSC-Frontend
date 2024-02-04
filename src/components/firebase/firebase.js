@@ -20,4 +20,7 @@ const app = initializeApp(firebaseConfig);
 // get firebase database
 const db = firebase.firestore();
 
+// prevents warnings/errors in console
+db.settings({timestampsInSnapshots: true})
+
 export default db;
