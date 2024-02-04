@@ -2,9 +2,14 @@ import "./TextOutputDisplay.css";
 import React, { useState } from "react";
 const TextOutputDisplay = ({ onSave, text }) => {
 
-  const handleCopy = () => {
-    navigator.clipboard.writeText(text);
-  };
+  function toTitleCase(str) {
+    return str.replace(
+      /\w\S*/g,
+      function(txt) {
+        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+      }
+    );
+  }
 
   // useState function returns array with current state value of the dropdown and function to update it
   const [selectedOption, setSelectedOption] = useState("");
@@ -25,15 +30,15 @@ const TextOutputDisplay = ({ onSave, text }) => {
           <div className="output-buttons">
             <button
             // Calls the handleSave function from the FrontPage component
-              onClick={() => onSave(selectedOption)}
+              onClick={() => onSave(selectedOption.toLowerCase())}
               className="output-button"
             >
-              Save
+              lowercase
             </button>
-            <button onClick={handleCopy} className="output-button">
-              Copy
+            <button onClick={() => onSave(selectedOption.toUpperCase())} className="output-button">
+              UPPERCASE
             </button>
-            <button className="output-button">C</button>
+            <button onClick={() => onSave(toTitleCase(selectedOption))} className="output-button">TitleCase</button>
           </div>
         </div>
       </div>

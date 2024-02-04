@@ -1,11 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import './OutputPane.css';
 
-const OutputPane = ({ outputText }) => {
-    const [text, setText] = useState('');
+const OutputPane = ({ outputText, onClear, onBackspace, onSuperBackspace, onSpace}) => {
+    const [text, setText] = useState(outputText);
+ 
+    // useEffect function is called whenever the outputText changes
+    useEffect(() => {
+        setText(outputText);
+    }, [outputText]);
 
     const handleClear = () => {
         setText('');
+        onClear(); // Calls the onClear function from the FrontPage component
     };
 
     const handleCopy = () => {
@@ -13,6 +19,7 @@ const OutputPane = ({ outputText }) => {
     };
 
     const handleBackspace = () => {
+        onBackspace();
         if (text.length === 0) {
             return;
         }
@@ -20,6 +27,7 @@ const OutputPane = ({ outputText }) => {
     };
 
     const handleSuperBackspace = () => {
+        onSuperBackspace();
         if (text.length === 0) {
             return;
         }
@@ -37,6 +45,7 @@ const OutputPane = ({ outputText }) => {
     };
 
     const handleSpace = () => {
+        onSpace();
         setText(text + ' ');
     }
 
