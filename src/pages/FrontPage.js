@@ -1,6 +1,8 @@
 
 import TextOutputDisplay from "../components/textOutputDisplay/TextOutputDisplay";
 import TextInputDisplay from "../components/textInputDisplay/TextInputDisplay";
+import OutputPane from "../components/textInputDisplay/OutputPane";
+
 import './FrontPage.css';
 const FrontPage = () => {
     return (
@@ -11,6 +13,9 @@ const FrontPage = () => {
             <div className="function">
                 <TextOutputDisplay />
                 <TextInputDisplay />
+            </div>
+            <div className="output">
+                <OutputPane />
             </div>
         </div>
     );
