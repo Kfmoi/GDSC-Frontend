@@ -18,3 +18,10 @@ button.copy{
     color: white;
     font-size: 20px;
 }
+
+.output-text{
+    width: 320px;
+    padding: 10px;
+    font-size: 16px;
+}
+

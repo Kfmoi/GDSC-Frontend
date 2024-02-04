@@ -18,7 +18,7 @@ const TextOutputDisplay = ({ onSave, text }) => {
       <div className="output">
         <div className="column-display">
           <select
-            className="input-text"
+            className="output-text"
             value={selectedOption}
             // Changes the useState to the value of the dropdown
             onChange={(e) => setSelectedOption(e.target.value)}
